@@ -18,5 +18,15 @@
         <img src="images/downarrow.png" alt="down" width="50px"/>
       </section>
     </header>
+    <script>
+      //  before the page load is complete, add " js-loading" to any existing body class 
+      document.body.className += " js-loading"; 
+      // when the load event is complete (page is fully loaded), run our function showPage
+      window.addEventListener("load", showPage, false);
+      //showPage() removes the js-loading class so that we can time the animations to start only when this class is not present.
+      function showPage(){
+        document.body.className = document.body.className.replace("js-loading", "");
+      }
+    </script>
   </body>
 </html>
